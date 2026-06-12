@@ -1,0 +1,108 @@
+{
+  "name": "Incident",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Brief title of the incident"
+    },
+    "infrastructure_type": {
+      "type": "string",
+      "enum": [
+        "streetlight",
+        "traffic_light",
+        "substation",
+        "eskom_pylon",
+        "telecom_cable",
+        "other"
+      ],
+      "description": "Type of infrastructure affected"
+    },
+    "urgency": {
+      "type": "string",
+      "enum": [
+        "active_theft",
+        "fresh_damage",
+        "existing_damage"
+      ],
+      "description": "Urgency level of the report"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "recent",
+        "week_old",
+        "resolved"
+      ],
+      "default": "active",
+      "description": "Current status of the incident"
+    },
+    "latitude": {
+      "type": "number",
+      "description": "GPS latitude"
+    },
+    "longitude": {
+      "type": "number",
+      "description": "GPS longitude"
+    },
+    "address": {
+      "type": "string",
+      "description": "Human-readable address"
+    },
+    "area_name": {
+      "type": "string",
+      "description": "Area/neighbourhood name"
+    },
+    "ward_number": {
+      "type": "string",
+      "description": "Gauteng ward number"
+    },
+    "municipality": {
+      "type": "string",
+      "description": "Municipality name"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description of the incident"
+    },
+    "photo_url": {
+      "type": "string",
+      "description": "URL of uploaded photo evidence"
+    },
+    "severity_score": {
+      "type": "number",
+      "description": "Severity from 1-10"
+    },
+    "confirmations": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of community confirmations"
+    },
+    "is_safe": {
+      "type": "boolean",
+      "default": true,
+      "description": "Reporter safety status"
+    },
+    "reported_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the incident was reported"
+    },
+    "resolved_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the incident was resolved"
+    },
+    "case_reference": {
+      "type": "string",
+      "description": "Auto-generated case reference number"
+    }
+  },
+  "required": [
+    "infrastructure_type",
+    "latitude",
+    "longitude",
+    "area_name"
+  ]
+}
