@@ -1,0 +1,62 @@
+{
+  "name": "Ward",
+  "type": "object",
+  "properties": {
+    "ward_number": {
+      "type": "string",
+      "description": "Ward number"
+    },
+    "ward_name": {
+      "type": "string",
+      "description": "Ward name"
+    },
+    "municipality": {
+      "type": "string",
+      "description": "Municipality name"
+    },
+    "councillor_name": {
+      "type": "string",
+      "description": "Ward councillor name"
+    },
+    "councillor_phone": {
+      "type": "string",
+      "description": "Contact phone number"
+    },
+    "total_reports": {
+      "type": "number",
+      "default": 0
+    },
+    "resolved_reports": {
+      "type": "number",
+      "default": 0
+    },
+    "avg_response_hours": {
+      "type": "number",
+      "default": 0,
+      "description": "Average response time in hours"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "under_control",
+        "needs_attention",
+        "critical"
+      ],
+      "default": "needs_attention"
+    },
+    "badge": {
+      "type": "string",
+      "enum": [
+        "most_critical",
+        "most_improved",
+        "none"
+      ],
+      "default": "none"
+    }
+  },
+  "required": [
+    "ward_number",
+    "ward_name",
+    "municipality"
+  ]
+}
