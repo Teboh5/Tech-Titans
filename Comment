@@ -1,0 +1,23 @@
+{
+  "name": "Comment",
+  "type": "object",
+  "properties": {
+    "incident_id": {
+      "type": "string",
+      "description": "ID of the parent incident"
+    },
+    "text": {
+      "type": "string",
+      "description": "Comment text"
+    },
+    "author_name": {
+      "type": "string",
+      "default": "Anonymous",
+      "description": "Display name"
+    }
+  },
+  "required": [
+    "incident_id",
+    "text"
+  ]
+}
